@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import Link from 'next/link'
 
 import Image from 'next/image'
@@ -17,7 +19,9 @@ export default function Header() {
           devstore
         </Link>
 
-        <SearchForm />
+        <Suspense fallback={null}>
+          <SearchForm />
+        </Suspense>
       </nav>
 
       <div className="flex items-center gap-4">
